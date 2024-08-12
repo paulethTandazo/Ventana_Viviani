@@ -3,8 +3,27 @@
 **Descripción:** Este proyecto utiliza técnicas númericas para calcular la aproximación del perímetro de la ventana de viviani, una curva espacial que surge de la intersección de una esfera y un cilindro.
 
  ![Pantalla del Paciente](https://i.postimg.cc/fLjmPdZ3/ventana-viviani-2-0.png)
-## Fórmulas para la aproximación del perímetro
-El cálculo del perímetro de la ventana de viviani se realiza utilizando la siguiente aproximación mediante la suma de riema: 
+## 1. Generación de puntos en la Ventana de Viviani
+Para dibujar esta curva en la computadora, necesitamos calcular muchos puntos en ese camino y luego conectarlos para ver la curva completa:
+```python
+ddef viviani_points(r, n):
+    t = np.linspace(0, 2 * np.pi, n)
+    x = r * (1 + np.cos(t))
+    y = r * np.sin(t)
+    z = 2 * r * np.sin(t / 2)
+    return x, y, z
+
+```
+### La función viviani_points se encarga de calcular: 
+**- r:**  Es como el tamaño de la curva; cuanto más grande es r, más grande es la curva.
+
+**- n:**  Es cuántos puntos vamos a calcular a lo largo de la curva. Más puntos (n más grande) hacen que la curva se vea más suave y detallada.
+**- t:**  Es una variable que va cambiando, y con cada cambio calculamos un nuevo punto en la curva. Es como si siguiéramos un mapa para trazar la curva.
+
+Con estos valores, calculamos las coordenadas x, y, z, que son como las direcciones de cada punto en el espacio (imaginemos que x es adelante/atrás, y es izquierda/derecha, y z es arriba/abajo).
+
+### 2. Cálculo del perímetro aproximado de la Ventana de Viviani
+
 ```python
 def perimetro_viviani(r, n):
     delta_t = 2 * np.pi / n
@@ -19,17 +38,21 @@ def perimetro_viviani(r, n):
     L = np.sum(integrando) * delta_t
     return L
 ```
-### Explicación
-**- r:**  radio de la esfera
 
-**- n:** El número de subdivisiones (subintervalos) utilizados para aproximar 
-### Cálculo
-**1. delta_t:** Es el paso de la subdivisión, que es igual a 2π/n.
+**delta_t:** 2 np.pi / n: Calcula el pequeño incremento en t, correspondiente a la distancia entre los puntos de la curva para la aproximación.
 
-**2. t:** Un arreglo de valores en el intervalo [0, 2π], dividido en n partes iguales.
+**dx_dt, dy_dt, dz_dt:**  Son las derivadas de las funciones x(t), y(t) y z(t) con respecto a t. Estas derivadas representan la velocidad de cambio de las coordenadas con respecto al parámetro t.
 
-**3. dx_dt, dy_dt, dz_dt:** Derivadas de las coordenadas x, y, z con respecto al parámetro t, que describen la curva de la Ventana de Viviani.
+**dx_dt: -r * np.sin(t):** Derivada de x(t) con respecto a t.
 
-**4. integrando:** La longitud de arco elemental de la curva en cada subdivisión, calculada como la raíz cuadrada de la suma de los cuadrados de dx_dt, dy_dt y dz_dt.
+**dy_dt: r * np.cos(t):** Derivada de y(t) con respecto a t.
 
-**5. L:** El perímetro aproximado, obtenido sumando todas las longitudes elementales y multiplicándolas por delta_t
+**dz_dt: r * np.cos(t / 2):** Derivada de z(t) con respecto a t.
+
+**integrando: np.sqrt(dx_dt**2 + dy_dt**2 + dz_dt**2):** Este término representa la longitud diferencial a lo largo de la curva. Es decir, la longitud de un pequeño segmento de la curva en el espacio tridimensional.
+
+**L:np.sum(integrando) * delta_t:** Aquí se suma la longitud de todos los pequeños segmentos para aproximar el perímetro total de la Ventana de Viviani.
+
+
+Este método de suma de Riemann es una técnica de integración numérica que divide la curva en pequeños segmentos y suma sus longitudes para obtener una aproximación del perímetro total.
+
