@@ -2,7 +2,8 @@
 
 Descripción: Este proyecto utiliza técnicas númericas para calcular la aproximación del perímetro de la ventana de viviani, una curva espacial que surge de la intersección de una esfera y un cilindro. 
 
-![Pantalla del Paciente](https://i.postimg.cc/Hx1F2wZf/Doc1-page-0001.jpg)
+<p style="text-align: center;"> ![Pantalla del Paciente](https://i.postimg.cc/Hx1F2wZf/Doc1-page-0001.jpg)
+</p>    
 ## Fórmulas para la aproximación del perímetro
 El cálculo del perímetro de la ventana de viviani se realiza utilizando la siguiente aproximación mediante la suma de riema: 
 ```python
