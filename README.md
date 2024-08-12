@@ -39,19 +39,19 @@ def perimetro_viviani(r, n):
     return L
 ```
 
-**delta_t:** 2 np.pi / n: Calcula el pequeño incremento en t, correspondiente a la distancia entre los puntos de la curva para la aproximación.
+**- delta_t:** 2 np.pi / n: Calcula el pequeño incremento en t, correspondiente a la distancia entre los puntos de la curva para la aproximación.
 
-**dx_dt, dy_dt, dz_dt:**  Son las derivadas de las funciones x(t), y(t) y z(t) con respecto a t. Estas derivadas representan la velocidad de cambio de las coordenadas con respecto al parámetro t.
+**- dx_dt, dy_dt, dz_dt:**  Son las derivadas de las funciones x(t), y(t) y z(t) con respecto a t. Estas derivadas representan la velocidad de cambio de las coordenadas con respecto al parámetro t.
 
-**dx_dt: -r * np.sin(t):** Derivada de x(t) con respecto a t.
+**- dx_dt: -r * np.sin(t):** Derivada de x(t) con respecto a t.
 
-**dy_dt: r * np.cos(t):** Derivada de y(t) con respecto a t.
+**- dy_dt: r * np.cos(t):** Derivada de y(t) con respecto a t.
 
-**dz_dt: r * np.cos(t / 2):** Derivada de z(t) con respecto a t.
+**- dz_dt: r * np.cos(t / 2):** Derivada de z(t) con respecto a t.
 
-**integrando: np.sqrt(dx_dt**2+dy_dt**2+dz_dt**2):** Este término representa la longitud diferencial a lo largo de la curva. Es decir, la longitud de un pequeño segmento de la curva en el espacio tridimensional.
+**- integrando: np.sqrt(dx_dt**2+dy_dt**2+dz_dt**2): Este término representa la longitud diferencial a lo largo de la curva. Es decir, la longitud de un pequeño segmento de la curva en el espacio tridimensional.
 
-**L:np.sum(integrando) * delta_t:** Aquí se suma la longitud de todos los pequeños segmentos para aproximar el perímetro total de la Ventana de Viviani.
+**- L:np.sum(integrando) * delta_t:** Aquí se suma la longitud de todos los pequeños segmentos para aproximar el perímetro total de la Ventana de Viviani.
 
 
 Este método de suma de Riemann es una técnica de integración numérica que divide la curva en pequeños segmentos y suma sus longitudes para obtener una aproximación del perímetro total.
