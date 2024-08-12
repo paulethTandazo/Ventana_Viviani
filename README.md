@@ -1,6 +1,6 @@
 # Ventana De Viviani
 
-Descripción: Este proyecto utiliza técnicas númericas para calcular la aproximación del perímetro de la ventana de viviani, una curva espacial que surge de la intersección de una esfera y un cilindro.
+**Descripción:** Este proyecto utiliza técnicas númericas para calcular la aproximación del perímetro de la ventana de viviani, una curva espacial que surge de la intersección de una esfera y un cilindro.
 
  ![Pantalla del Paciente](https://i.postimg.cc/fLjmPdZ3/ventana-viviani-2-0.png)
 ## Fórmulas para la aproximación del perímetro
