@@ -17,9 +17,9 @@ def perimetro_viviani(r, n):
     return L
 ```
 ### Explicación
-**r:**  radio de la esfera
+**- r:**  radio de la esfera
 
-**n:** El número de subdivisiones (subintervalos) utilizados para aproximar 
+**- n:** El número de subdivisiones (subintervalos) utilizados para aproximar 
 ### Cálculo
 **1. delta_t:** Es el paso de la subdivisión, que es igual a 2π/n.
 
