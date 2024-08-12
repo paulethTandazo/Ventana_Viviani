@@ -18,6 +18,7 @@ ddef viviani_points(r, n):
 **- r:**  Es como el tamaño de la curva; cuanto más grande es r, más grande es la curva.
 
 **- n:**  Es cuántos puntos vamos a calcular a lo largo de la curva. Más puntos (n más grande) hacen que la curva se vea más suave y detallada.
+
 **- t:**  Es una variable que va cambiando, y con cada cambio calculamos un nuevo punto en la curva. Es como si siguiéramos un mapa para trazar la curva.
 
 Con estos valores, calculamos las coordenadas x, y, z, que son como las direcciones de cada punto en el espacio (imaginemos que x es adelante/atrás, y es izquierda/derecha, y z es arriba/abajo).
