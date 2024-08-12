@@ -17,11 +17,12 @@ def perimetro_viviani(r, n):
     return L
 ```
 ### Explicación
-** r:**  radio de la esfera
-n: El número de subdivisiones (subintervalos) utilizados para aproximar 
+**r:**  radio de la esfera
+
+**n:** El número de subdivisiones (subintervalos) utilizados para aproximar 
 ### Cálculo
-delta_t: Es el paso de la subdivisión, que es igual a 2π/n.
-t: Un arreglo de valores en el intervalo [0, 2π], dividido en n partes iguales.
-dx_dt, dy_dt, dz_dt: Derivadas de las coordenadas x, y, z con respecto al parámetro t, que describen la curva de la Ventana de Viviani.
-integrando: La longitud de arco elemental de la curva en cada subdivisión, calculada como la raíz cuadrada de la suma de los cuadrados de dx_dt, dy_dt y dz_dt.
-L: El perímetro aproximado, obtenido sumando todas las longitudes elementales y multiplicándolas por delta_t
+**delta_t:** Es el paso de la subdivisión, que es igual a 2π/n.
+**t:** Un arreglo de valores en el intervalo [0, 2π], dividido en n partes iguales.
+**dx_dt, dy_dt, dz_dt:** Derivadas de las coordenadas x, y, z con respecto al parámetro t, que describen la curva de la Ventana de Viviani.
+**integrando:** La longitud de arco elemental de la curva en cada subdivisión, calculada como la raíz cuadrada de la suma de los cuadrados de dx_dt, dy_dt y dz_dt.
+**L:** El perímetro aproximado, obtenido sumando todas las longitudes elementales y multiplicándolas por delta_t
