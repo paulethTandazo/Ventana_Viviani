@@ -49,7 +49,7 @@ def perimetro_viviani(r, n):
 
 **dz_dt: r * np.cos(t / 2):** Derivada de z(t) con respecto a t.
 
-**integrando: np.sqrt(dx_dt**2 + dy_dt**2 + dz_dt**2):** Este término representa la longitud diferencial a lo largo de la curva. Es decir, la longitud de un pequeño segmento de la curva en el espacio tridimensional.
+**integrando: np.sqrt(dx_dt**2+dy_dt**2+dz_dt**2):** Este término representa la longitud diferencial a lo largo de la curva. Es decir, la longitud de un pequeño segmento de la curva en el espacio tridimensional.
 
 **L:np.sum(integrando) * delta_t:** Aquí se suma la longitud de todos los pequeños segmentos para aproximar el perímetro total de la Ventana de Viviani.
 
