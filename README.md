@@ -6,11 +6,11 @@
 ## 1. Generación de puntos en la Ventana de Viviani
 Para dibujar esta curva en la computadora, necesitamos calcular muchos puntos en ese camino y luego conectarlos para ver la curva completa:
 ```python
-ddef viviani_points(r, n):
+def obtener_puntos_viviani(r, n):
     t = np.linspace(0, 2 * np.pi, n)
-    x = r * (1 + np.cos(t))
-    y = r * np.sin(t)
-    z = 2 * r * np.sin(t / 2)
+    x = r/2 * (1 + np.cos(t))
+    y = r/2 * np.sin(t)
+    z = r * np.sin(t / 2)
     return x, y, z
 
 ```
@@ -26,12 +26,12 @@ Con estos valores, calculamos las coordenadas x, y, z, que son como las direccio
 ### 2. Cálculo del perímetro aproximado de la Ventana de Viviani
 
 ```python
-def perimetro_viviani(r, n):
+ddef calcular_perimetro_viviani(r, n):
     delta_t = 2 * np.pi / n
     t = np.linspace(0, 2 * np.pi, n)
     
-    dx_dt = -r * np.sin(t)
-    dy_dt = r * np.cos(t)
+    dx_dt = -r/2 * np.sin(t)
+    dy_dt = r/2 * np.cos(t)
     dz_dt = r * np.cos(t / 2)
     
     integrando = np.sqrt(dx_dt**2 + dy_dt**2 + dz_dt**2)
