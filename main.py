@@ -28,16 +28,34 @@ class ToolTip:
             self.tooltip.destroy()
             self.tooltip = None
 
+# Función para dibjar la esfera de radio r
+def dibujar_esfera(r):
+    u = np.linspace(0, 2*np.pi, 30)
+    v = np.linspace(0, np.pi, 30)
+    x = r*np.outer(np.cos(u), np.sin(v))
+    y = r*np.outer(np.sin(u), np.sin(v))
+    z = r*np.outer(np.ones(np.size(u)), np.cos(v))
+    ax.plot_surface(x, y, z, color="w", alpha=0.3)
+
+# Función para dibujar el cilindo de radio r/2
+def dibujar_cilindro(r):
+    u = np.linspace(0, 2*np.pi, 30)
+    z = np.linspace(-r, r, 30)
+    X = r/2 * (1 + np.cos(u))
+    Y = r/2 * np.sin(u)
+    a,Z = np.meshgrid(u,z)
+    ax.plot_surface(X, Y, Z, color="b", alpha=0.1)
+
 # Función para calcular los puntos de la Ventana de Viviani
-def viviani_points(r, n):
+def obtener_puntos_viviani(r, n):
     t = np.linspace(0, 2 * np.pi, n)
-    x = r * (1 + np.cos(t))
-    y = r * np.sin(t)
-    z = 2 * r * np.sin(t / 2)
+    x = r/2 * (1 + np.cos(t))
+    y = r/2 * np.sin(t)
+    z = r * np.sin(t / 2)
     return x, y, z
 
 # Función para calcular el perímetro aproximado usando suma de Riemann
-def perimetro_viviani(r, n):
+def calcular_perimetro_viviani(r, n):
     delta_t = 2 * np.pi / n
     t = np.linspace(0, 2 * np.pi, n)
     
@@ -63,9 +81,13 @@ def update_plot():
         
         ax.clear()
         
-        x, y, z = viviani_points(r, n)
-        ax.plot(x, y, z, color="red")
-        perimetro = perimetro_viviani(r, n)
+        dibujar_esfera(r)
+        dibujar_cilindro(r)
+
+        x, y, z = obtener_puntos_viviani(r, n)
+        ax.plot(x, y, z, color="r")
+        ax.plot(x,y,-z, color="r")
+        perimetro = calcular_perimetro_viviani(r, n)
         label_result.config(text=f"Perímetro aproximado: {perimetro:.2f}")
         
         ax.set_xlabel('X')
