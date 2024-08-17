@@ -2,7 +2,7 @@
 
 **Descripción:** Este proyecto utiliza técnicas númericas para calcular la aproximación del perímetro de la ventana de viviani, una curva espacial que surge de la intersección de una esfera y un cilindro.
 
- ![Pantalla del Paciente](https://i.postimg.cc/fLjmPdZ3/ventana-viviani-2-0.png)
+ ![Pantalla del Paciente](https://i.postimg.cc/Dyv8mN4c/viviani.png)
 ## 1. Generación de puntos en la Ventana de Viviani
 Para dibujar esta curva en la computadora, necesitamos calcular muchos puntos en ese camino y luego conectarlos para ver la curva completa:
 ```python
