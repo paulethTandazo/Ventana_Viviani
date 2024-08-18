@@ -44,9 +44,9 @@ ddef calcular_perimetro_viviani(r, n):
 
 **- dx_dt, dy_dt, dz_dt:**  Son las derivadas de las funciones x(t), y(t) y z(t) con respecto a t. Estas derivadas representan la velocidad de cambio de las coordenadas con respecto al parámetro t.
 
-**- dx_dt: -r * np.sin(t):** Derivada de x(t) con respecto a t.
+**- dx_dt: -r/2 * np.sin(t):** Derivada de x(t) con respecto a t.
 
-**- dy_dt: r * np.cos(t):** Derivada de y(t) con respecto a t.
+**- dy_dt: r/2 * np.cos(t):** Derivada de y(t) con respecto a t.
 
 **- dz_dt: r * np.cos(t / 2):** Derivada de z(t) con respecto a t.
 
