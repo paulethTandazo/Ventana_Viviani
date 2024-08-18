@@ -61,7 +61,7 @@ def calcular_perimetro_viviani(r, n):
     
     dx_dt = -r/2 * np.sin(t)
     dy_dt = r/2 * np.cos(t)
-    dz_dt = r * np.cos(t / 2)
+    dz_dt = r/2 * np.cos(t / 2)
     
     integrando = np.sqrt(dx_dt**2 + dy_dt**2 + dz_dt**2)
     
